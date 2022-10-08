@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import App01 from './App01';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={{display: 'flex'}}>
+      <App name="ccc"/>
+      {/* <App01 name="abc" kkk="school"/>
+      <App01 name="abc" kkk="school"/>
+      <App01 name="abc" kkk="school"/>
+      <App01 name="abc" kkk="school"/>
+      <App01 name="abc" kkk="school"/>
+      <App01 name="abc" kkk="school"/> */}
+      {Array.apply(0, Array(10)).map(function (x, i) {
+        return <App01 key={i} name={i} kkk={x}/>;
+      })}
+    </div>
   </React.StrictMode>
 );
 
